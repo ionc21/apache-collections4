@@ -2,16 +2,10 @@ package com.pgs.bidimap;
 
 import org.apache.commons.collections4.BidiMap;
 import org.apache.commons.collections4.bidimap.DualHashBidiMap;
-import org.springframework.beans.factory.annotation.Value;
-import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.PropertySource;
 
-@Configuration
-@PropertySource("classpath:application.properties")
 public class BidiMapExample {
-
-    @Value("${locals}")
-    private static String locals;
+    
+    private static final String locals = "en-Englis;ro-Romanian;fr-French";
 
     public static BidiMap<String, String> getLanguageKeyValuePair() {
         final BidiMap<String, String> langs = new DualHashBidiMap<String, String>();
